@@ -1,25 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
+const links = [
+  { name: 'Home', path: '/' },
+  { name: 'Resume', path: '/resume' },
+  { name: 'Contact', path: '/contact' },
+  // Add more links here as needed
+];
 
 function Nav() {
   return (
     <nav>
-      <ul className="flex space-x-4">
-        <li>
-          <Link to="/" className="text-white hover:text-accent">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/resume" className="text-white hover:text-accent">
-            Resume
-          </Link>
-        </li>
-        <li>
-          <Link to="/contact" className="text-white hover:text-accent">
-            Contact
-          </Link>
-        </li>
+      <ul className="flex gap-8">
+        {links.map((link) => (
+          <li key={link.path}>
+            <NavLink
+              to={link.path}
+              className={({ isActive }) =>
+                isActive ? 'text-accent underline' : 'text-white hover:text-accent'
+              }
+            >
+              {link.name}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   );
