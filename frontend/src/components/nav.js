@@ -5,13 +5,12 @@ const links = [
   { name: 'Home', path: '/' },
   { name: 'Resume', path: '/resume' },
   { name: 'Contact', path: '/contact' },
-  // Add more links here as needed
 ];
 
 function Nav() {
   return (
     <nav>
-      <ul className="flex gap-8">
+      <ul className="flex gap-8 text-base">
         {links.map((link) => (
           <li key={link.path}>
             <NavLink

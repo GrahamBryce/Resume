@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        accent: '#4f46e5', 
+        // accent: '#4f46e5', 
+        accent: 'rgb(63 135 228)', 
       },
     },
     screens:{
