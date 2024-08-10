@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
-import Nav from './nav.js';
+import Nav from './nav.jsx';
 // import { Button } from "@material-tailwind/react";
 
 function Header() {
