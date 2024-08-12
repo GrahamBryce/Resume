@@ -3,12 +3,14 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/home';
 import Resume from './pages/resume';
-import Contact from './pages/contact'
+import Contact from './pages/contact';
 import PageTransition from './components/pageTransition';
+import StairTransition from './components/stairTransition';
 
 function App() {
   return (
     <Router>
+      <StairTransition />
       <PageTransition>
         <Header />
         <Routes>
