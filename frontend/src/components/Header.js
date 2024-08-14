@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
+
 import Nav from './nav.jsx';
+import MobileNav from "./mobileNav.jsx"
 // import { Button } from "@material-tailwind/react";
+
 
 function Header() {
   return (
@@ -20,7 +23,9 @@ function Header() {
           </Link>
         </div>
         {/* mobile nav */}
-        <div className='xl:hidden'>Mobile Nav</div>
+        <div className='xl:hidden'>
+          <MobileNav/>
+        </div>
       </div>
     </header>
   );
