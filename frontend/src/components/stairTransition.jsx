@@ -3,7 +3,7 @@ import React from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import Stairs from './stairs';
-import { CiMenuFries } from 'react-icons/ci'
+// import { CiMenuFries } from 'react-icons/ci'
 
 function StairTransition() {
   const location = useLocation();
