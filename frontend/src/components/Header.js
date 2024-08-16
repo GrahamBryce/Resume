@@ -4,6 +4,7 @@ import './Header.css';
 
 import Nav from './nav.jsx';
 import MobileNav from "./mobileNav.jsx"
+// import { DropdownMenu } from '@radix-ui/react-dropdown-menu';
 // import { Button } from "@material-tailwind/react";
 
 
@@ -18,12 +19,10 @@ function Header() {
         </Link>
         <div className='hidden xl:flex text-white items-center gap-8'>
           <Nav />
-          <Link to="/contact">
-            <h1 className='button blue'>hire me</h1>
-          </Link>
+
         </div>
         {/* mobile nav */}
-        <div className='xl:hidden'>
+        <div className='xl:hidden white'>
           <MobileNav/>
         </div>
       </div>
