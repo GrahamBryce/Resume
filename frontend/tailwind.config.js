@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         // accent: '#4f46e5', 
         accent: 'rgb(63 135 228)', 
+        base: 'rgb(0, 0, 0)',
       },
     },
     screens:{
