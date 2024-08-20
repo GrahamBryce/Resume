@@ -9,17 +9,19 @@ import StairTransition from './components/stairTransition';
 
 function App() {
   return (
-    <Router>
-      <StairTransition />
-      <PageTransition>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </PageTransition>
-    </Router>
+    // <BrowserRouter>
+      <Router>
+        <StairTransition />
+        <PageTransition>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </PageTransition>
+      </Router>
+    // </BrowserRouter> 
   );
 }
 
