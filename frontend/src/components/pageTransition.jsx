@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 const PageTransition = ({ children }) => {
   const location = useLocation();
 
-  console.log('Rendering PageTransition for:', location.pathname);
+  // console.log('Rendering PageTransition for:', location.pathname);
 
   return (
     <AnimatePresence mode="wait" initial={false}>
@@ -22,7 +22,7 @@ const PageTransition = ({ children }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ delay: 0.4, duration: 0.4 }}
+          transition={{ delay: .7, duration: 0.4 }}
           className="relative h-full w-full"
           onAnimationStart={() => console.log('Inner animation started')}
         >
