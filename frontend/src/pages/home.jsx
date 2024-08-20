@@ -1,6 +1,7 @@
 import React from 'react';
 import { FiDownload } from "react-icons/fi"
 
+import Photo from '../components/photo';
 import Social from "../components/social"
 
 function Home() {
@@ -29,7 +30,7 @@ function Home() {
               </div>
             </div>
           </div>
-          <div>Future Photo</div>
+          <div><Photo/></div>
         </div>
       </div>
     </section>
