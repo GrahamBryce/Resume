@@ -9,7 +9,6 @@ import StairTransition from './components/stairTransition';
 
 function App() {
   return (
-    // <BrowserRouter>
       <Router>
         <StairTransition />
         <PageTransition>
@@ -21,7 +20,6 @@ function App() {
           </Routes>
         </PageTransition>
       </Router>
-    // </BrowserRouter> 
   );
 }
 
