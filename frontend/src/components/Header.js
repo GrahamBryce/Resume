@@ -17,12 +17,12 @@ function Header() {
             Bryce<span className="text-accent">.</span>
           </h1>
         </Link>
-        <div className='hidden xl:flex text-white items-center gap-8'>
+        <div className='hidden xl:flex lg:flex text-white items-center gap-8'>
           <Nav />
 
         </div>
         {/* mobile nav */}
-        <div className='xl:hidden white'>
+        <div className='xl:hidden  lg:hidden white'>
           <MobileNav/>
         </div>
       </div>
