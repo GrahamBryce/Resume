@@ -1,5 +1,4 @@
 import React from 'react';
-import { FiDownload } from "react-icons/fi";
 
 import Photo from '../components/photo';
 import Social from "../components/social";
