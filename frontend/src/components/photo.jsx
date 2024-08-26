@@ -12,13 +12,12 @@ const Photo = () => {
         transition={{ delay: 1.4, duration: 0.4, ease: "easeIn" }}
         className="relative"
       >
-        {/* Image Container */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.4, ease: "easeInOut" }}
           className="absolute w-[300px] h-[300px] xl:w-[490px] xl:h-[490px] rounded-full"
-          style={{ top: ".3rem" }} // Single top positioning for all screen sizes
+          style={{ top: ".3rem" }}
         >
           <img
             src={IMG_4613}
