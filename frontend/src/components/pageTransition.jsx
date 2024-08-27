@@ -5,8 +5,6 @@ import { useLocation } from 'react-router-dom';
 const PageTransition = ({ children }) => {
   const location = useLocation();
 
-  // console.log('Rendering PageTransition for:', location.pathname);
-
   return (
     <AnimatePresence mode="wait" initial={false}>
       <motion.div id='b'

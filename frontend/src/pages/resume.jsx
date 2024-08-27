@@ -7,7 +7,7 @@ import Degree from "../assets/Degree.jpg";
 
 const about = {
   title: "About me",
-  description: "I am a well-rounded MERN Stack Web Developer with a strong grasp of front-end best practices. I value structure, clean code, and quality, and take pride in perfecting all of the details and optimizing web applications. While I enjoy working in a collaborative team environment where learning is accelerated, I am also proficient at working independently to deliver high-quality results.",
+  description: "I am a well-rounded MERN Stack Web Developer with a strong grasp of front-end best practices. I value structure, clean code, quality and I take pride in perfecting all of the details and optimizing web applications. While I enjoy working in a collaborative team environment where learning is accelerated, I am also proficient at working independently to deliver high-quality results.",
   info: [
     { fieldName: "Name", FieldValue: "Bryce Graham" },
     { fieldName: "Phone", FieldValue: "573 890 0445" },
