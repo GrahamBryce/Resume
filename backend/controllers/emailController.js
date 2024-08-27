@@ -15,7 +15,7 @@ exports.sendEmail = async (req, res) => {
       },
       {
         publicKey: process.env.EMAILJS_PUBLIC_KEY,
-        privateKey: process.env.EMAILJS_PRIVATE_KEY, // Optional but recommended for security
+        privateKey: process.env.EMAILJS_PRIVATE_KEY, 
       }
     );
     console.log('SUCCESS!', response);

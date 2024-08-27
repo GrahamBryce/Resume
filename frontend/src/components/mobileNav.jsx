@@ -11,7 +11,7 @@ const links = [
 
 function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
-  const navRef = useRef(null); // Ref for the nav container
+  const navRef = useRef(null); 
 
   // Function to handle clicks outside of the nav
   const handleClickOutside = (event) => {
@@ -22,14 +22,11 @@ function MobileNav() {
 
   useEffect(() => {
     if (isOpen) {
-      // Add event listener when the menu is open
       document.addEventListener('mousedown', handleClickOutside);
     } else {
       // Remove event listener when the menu is closed
       document.removeEventListener('mousedown', handleClickOutside);
     }
-
-    // Cleanup event listener on component unmount
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
