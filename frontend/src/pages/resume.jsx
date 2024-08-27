@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { FaHtml5, FaCss3, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
+import { SiTailwindcss, SiMongodb } from "react-icons/si";
+import { RiNextjsFill } from "react-icons/ri";
 import { motion } from "framer-motion";
-import { SiTailwindcss } from "react-icons/si";
 import Degree from "../assets/Degree.jpg"; 
 
 const about = {
   title: "About me",
-  description: "I am a well-rounded Web Developer with a strong grasp of front-end best practices. I value structure, clean code, and quality, and take pride in perfecting the details and optimizing web applications. While I enjoy working in a collaborative team environment where learning is accelerated, I am also proficient at working independently to deliver high-quality results.",
+  description: "I am a well-rounded MERN Stack Web Developer with a strong grasp of front-end best practices. I value structure, clean code, and quality, and take pride in perfecting all of the details and optimizing web applications. While I enjoy working in a collaborative team environment where learning is accelerated, I am also proficient at working independently to deliver high-quality results.",
   info: [
     { fieldName: "Name", FieldValue: "Bryce Graham" },
     { fieldName: "Phone", FieldValue: "573 890 0445" },
@@ -33,8 +34,10 @@ const skills = {
     { icon: <FaCss3 />, name: 'CSS 3' },
     { icon: <FaJs />, name: 'JavaScript' },
     { icon: <FaReact />, name: 'React.js' },
+    { icon: <RiNextjsFill />, name: 'Next.js' },
     { icon: <SiTailwindcss />, name: 'Tailwind CSS' },
     { icon: <FaNodeJs />, name: 'Node.js' },
+    { icon: <SiMongodb />, name: 'MongoDB' },
   ]
 };
 
@@ -109,11 +112,11 @@ function Resume() {
           {activeTab === 'skills' && (
             <div className='text-center lg:text-left xl:text-left'>
               <h3 className="text-4xl font-bold text-white mb-6">My Skills</h3>
-              <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+              <ul className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {skills.skillList.map((skill, index) => (
                   <li 
                     key={index} 
-                    className="flex flex-col items-center justify-center p-4 border border-gray-700 rounded-lg bg-gray-800 hover:text-accent transition-colors duration-300"
+                    className="flex flex-col items-center justify-center p-6 border border-gray-700 rounded-lg bg-gray-800 hover:text-accent transition-colors duration-300"
                   >
                     <div className="text-4xl hover:text-accent mb-2">
                       {skill.icon}
