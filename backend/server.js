@@ -12,8 +12,7 @@ app.use(cors({
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 
-// Your API routes here
-app.use('/api', require('./routes/emailRoutes')); // Example API route
+app.use('/api', require('./routes/emailRoutes')); 
 
 // The "catchall" handler: for any request that doesn't match an API route, send back React's index.html file
 app.get('*', (req, res) => {
@@ -24,6 +23,7 @@ const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
 
 
 
