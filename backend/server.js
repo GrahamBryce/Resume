@@ -9,7 +9,7 @@ app.use(cors({
   origin: 'https://brycesresume-46f715e21449.herokuapp.com' // Your frontend's origin
 }));
 
-// Serve static files from the React app
+app.use(express.json());
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 app.use('/api', require('./routes/emailRoutes')); 
