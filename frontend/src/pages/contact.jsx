@@ -24,13 +24,26 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:8000/api/send-email", {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // const response = await fetch("https://b-graham.com/api/send-email", {
+      // // const response = await fetch("http://localhost:8000/api/send-email", {
+      //   method: "POST",
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify(formData),
+      // });
+const API_BASE_URL = process.env.NODE_ENV === 'production'
+  ? 'https://www.b-graham.com'
+  : 'https://brycesresume-46f715e21449.herokuapp.com';
+
+const response = await fetch(`${API_BASE_URL}/api/send-email`, {
+  method: "POST",
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(formData),
+});
+
 
       const responseData = await response.json();
 
