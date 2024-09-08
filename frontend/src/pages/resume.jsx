@@ -33,7 +33,7 @@ const skills = {
     { icon: <FaHtml5 />, name: 'HTML 5' },
     { icon: <FaCss3 />, name: 'CSS 3' },
     { icon: <FaJs />, name: 'JavaScript' },
-    { icon: <FaReact />, name: 'React.js' },
+    { icon: <FaReact />, name: 'React' },
     { icon: <RiNextjsFill />, name: 'Next.js' },
     { icon: <SiTailwindcss />, name: 'Tailwind CSS' },
     { icon: <FaNodeJs />, name: 'Node.js' },

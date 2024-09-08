@@ -38,30 +38,39 @@ const Photo = () => {
 
         {/* Animated SVG */}
         <motion.svg
-          className="w-[310px] xl:w-[510px] h-[310px] xl:h-[510px]"
-          fill="transparent"
-          viewBox="0 0 510 510"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <motion.circle
-            cx="253"
-            cy="253"
-            r="250"
-            stroke="#20B2AA"
-            strokeWidth="4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ strokeDasharray: "24 10 0 0" }}
-            animate={{
-              strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 72 72"],
-              rotate: [120, 360],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-          />
+  className="w-[310px] xl:w-[510px] h-[310px] xl:h-[510px]"
+  fill="transparent"
+  viewBox="0 0 510 510"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  {/* Define a glow filter */}
+        <defs>
+          <filter id="pulsating-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4">
+              <animate attributeName="stdDeviation" values="3;8;3" dur="2s" repeatCount="indefinite" />
+            </feGaussianBlur>
+          </filter>
+        </defs>
+        <motion.circle
+          cx="253"
+          cy="253"
+          r="250"
+          stroke="rgb(63 135 228)"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          initial={{ strokeDasharray: "24 10 0 0" }}
+          animate={{
+            strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 72 72"],
+            rotate: [120, 360],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+          style={{ filter: "url(#soft-glow)" }} // Change to the desired filter ID
+        />
         </motion.svg>
       </motion.div>
     </div>
