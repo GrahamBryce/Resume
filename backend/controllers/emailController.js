@@ -33,31 +33,3 @@ exports.sendEmail = async (req, res) => {
     res.status(500).json({ success: false, message: err.message });
   }
 };
-
-// const emailjs = require('@emailjs/nodejs'); 
-// require('dotenv').config();
-
-
-// exports.sendEmail = async (req, res) => {
-//   const { userName, userEmail, message } = req.body;
-
-//   try {
-//     const response = await emailjs.send(
-//       process.env.EMAILJS_SERVICE_ID,
-//       process.env.EMAILJS_TEMPLATE_ID,
-//       {
-//         userName,
-//         userEmail,
-//         message,
-//       },
-//       {
-//         publicKey: process.env.EMAILJS_PUBLIC_KEY,
-//         privateKey: process.env.EMAILJS_PRIVATE_KEY,
-//       }
-//     );
-//     res.status(201).json({ success: true, response });
-//   } catch (err) {
-//     console.error('Error sending email:', err);
-//     res.status(500).json({ success: false, message: err.message });
-//   }
-// };
