@@ -4,6 +4,7 @@ import { SiTailwindcss, SiMongodb } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import { motion } from "framer-motion";
 import Degree from "../assets/Degree.jpg"; 
+import GoogleCert from "../assets/GoogleCert.jpg"; 
 
 const about = {
   title: "About me",
@@ -21,8 +22,9 @@ const relevantExperience = {
   title: "My experience",
   description: "Entry-level programmer with 3 years of experience and a Bachelor's degree in Web Development. Graduated as Valedictorian, showcasing a strong commitment to excellence. Currently working part-time as a Support Engineer.",
   items: [
-    { company: "Full Sail University", position: "Bachelors Degree in Web Development", duration: "2021 December - 2024 May" },
-    { company: "Cocoon Data", position: "Support Engineer", duration: "2024 January - Present" },
+    { company: "Full Sail University", position: "Bachelors Degree Web Development", duration: "2021 December - 2024 May" },
+    { company: "Cocoon Data", position: "Support Engineer", duration: "2024 April - Present" },
+    { company: "Google Certificate", position: "IT Support Professional", duration: "November 2024" },
   ]
 };
 
@@ -43,15 +45,19 @@ const skills = {
 
 function Resume() {
   const [activeTab, setActiveTab] = useState('experience');
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
+  const [selectedCert, setSelectedCert] = useState(null);
 
-  const handleDegreeClick = () => {
-    setShowModal(true);
+
+  const handleCertClick = (cert) => {
+    setSelectedCert(cert);
   };
+  
 
   const handleCloseModal = () => {
-    setShowModal(false);
+    setSelectedCert(null);
   };
+  
 
   return (
     <motion.div
@@ -94,12 +100,19 @@ function Resume() {
             <div className='text-center sm:mt-6 md:mt-6 lg:mt-0 xl:mt-0 lg:text-left xl:text-left'>
               <h3 className="text-4xl font-bold text-white mb-2">My Experience</h3>
               <p className="text-lg font-bold mt-6 mb-6 text-white/60 mb-2">{relevantExperience.description}</p>
-              <div className='flex sm:flex-col md:flex-col lg:flex-row xl:flex-row xl:justify-start lg:justify-start md:justify-center sm:justify-center sm:items-center md:items-center xl:items-start lg:items-start gap-8'>
+              <div className='grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 justify-items-center mx-auto gap-8'>
                 {relevantExperience.items.map((item, index) => (
                   <div
                     key={index}
-                    className="block w-[330px] h-[175px] p-6 bg-gray-800 border border-gray-700 rounded-lg shadow cursor-pointer"
-                    onClick={item.position === "Bachelors Degree in Web Development" ? handleDegreeClick : null}
+                    className="block xl:w-full lg:w-full md:w-[350px] sm:w-auto h-[175px] p-2 pb-6 pr-6 pl-6 bg-gray-800 border border-gray-700 rounded-lg shadow cursor-pointer"
+                    // className="block w-full h-[175px] p-2 pb-6 pr-6 pl-6 bg-gray-800 border border-gray-700 rounded-lg shadow cursor-pointer"
+                    onClick={
+                      item.position === "Bachelors Degree Web Development"
+                        ? () => handleCertClick('degree')
+                        : item.position === "IT Support Professional"
+                        ? () => handleCertClick('googleCert')
+                        : null
+                    }
                   >
                     <p className="text-accent mb-2">{item.duration}</p>
                     <h4 className="font-semibold text-white text-xl mb-2">{item.position}</h4>
@@ -143,24 +156,29 @@ function Resume() {
           )}
         </div>
       </div>
-      {showModal && (
-      <div 
-        className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50" 
-        onClick={handleCloseModal} 
-      >
+      {selectedCert && (
         <div 
-          className="relative bg-white p-4 rounded-lg shadow-lg max-w-[90%] max-h-[90%]" 
-          onClick={(e) => e.stopPropagation()} 
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50" 
+          onClick={handleCloseModal} 
         >
-          <button
-            className="absolute top-2 right-2 text-black font-bold text-lg"
-            onClick={handleCloseModal}
+          <div 
+            className="relative bg-white p-4 rounded-lg shadow-lg max-w-[90%] max-h-[90%]" 
+            onClick={(e) => e.stopPropagation()} 
           >
-            &times;
-          </button>
-          <img src={Degree} alt="Degree" className="w-full h-auto max-w-[500px] max-h-[500px] rounded-lg" />
+            <button
+              className="absolute top-2 right-2 text-black font-bold text-lg"
+              onClick={handleCloseModal}
+            >
+              &times;
+            </button>
+            {selectedCert === 'degree' && (
+              <img src={Degree} alt="Degree" className="w-full h-auto max-w-[500px] max-h-[500px] rounded-lg" />
+            )}
+            {selectedCert === 'googleCert' && (
+              <img src={GoogleCert} alt="Google Certificate" className="w-full h-auto max-w-[500px] max-h-[500px] rounded-lg" />
+            )}
+          </div>
         </div>
-      </div>
       )}
     </motion.div>
   );
