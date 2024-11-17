@@ -104,7 +104,7 @@ function Resume() {
                 {relevantExperience.items.map((item, index) => (
                   <div
                     key={index}
-                    className="block xl:w-full lg:w-full md:w-[350px] sm:w-auto h-[175px] p-2 pb-6 pr-6 pl-6 bg-gray-800 border border-gray-700 rounded-lg shadow cursor-pointer"
+                    className="block xl:w-full lg:w-full md:w-[350px] sm:w-full h-[175px] p-2 pb-6 pr-6 pl-6 bg-gray-800 border border-gray-700 rounded-lg shadow cursor-pointer"
                     // className="block w-full h-[175px] p-2 pb-6 pr-6 pl-6 bg-gray-800 border border-gray-700 rounded-lg shadow cursor-pointer"
                     onClick={
                       item.position === "Bachelors Degree Web Development"
