@@ -2,7 +2,7 @@ import React from "react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const socials = [
-  { icon: <FaGithub />, path: 'https://github.com/GrahamBryce-FS?tab=overview&from=2024-08-01&to=2024-08-19' },
+  { icon: <FaGithub />, path: 'https://github.com/GrahamBryce' },
   { icon: <FaLinkedinIn />, path: 'https://www.linkedin.com/in/bryce-graham-8a5434242/' },
 ];
 
